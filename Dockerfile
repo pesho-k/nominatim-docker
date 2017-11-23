@@ -71,3 +71,6 @@ EXPOSE 8080
 COPY start.sh /srv/nominatim/start.sh
 RUN chmod +x /srv/nominatim/start.sh
 CMD /srv/nominatim/start.sh
+
+# Clean up
+RUN rm /srv/nominatim/data.osm.pbf
