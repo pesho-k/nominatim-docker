@@ -61,6 +61,10 @@ RUN service postgresql start && \
 
 COPY nominatim.conf /etc/apache2/sites-enabled/000-default.conf
 
+# Tune postgresql
+COPY postgresql.conf.sed /tmp/
+RUN sed --file /tmp/postgresql.conf.sed --in-place /etc/postgresql/9.5/main/postgresql.conf
+
 EXPOSE 5432
 EXPOSE 8080
 
