@@ -3,7 +3,7 @@ version: '3.1'
 services:
   nominatim:
     build: .
-    image: pesho-k/nominatim-docker-newgit
+    image: pesho-k/nominatim-docker
     ports:
-      - 8080:8080
+      - 8181:8080
     restart: always
